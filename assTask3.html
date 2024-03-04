@@ -1,0 +1,549 @@
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title> Assessment Task 3 </title>
+	<script>
+		/*  Task 4 JScript    */
+		
+        function cat() {
+            displayAnimalInfo("Cat has been selected.", 'cat.jpg');
+        }
+
+        function dog() {
+            displayAnimalInfo("Dog has been selected.", 'dog.jpg');
+        }
+
+        function frog() {
+            displayAnimalInfo("Frog has been selected.", 'frog.jpg');
+        }
+
+        function displayAnimalInfo(message, imagePath) {
+            var displayField = document.getElementById("displayText");
+            displayField.value = message;
+
+            var messageDiv = document.getElementById("message");
+            messageDiv.textContent = message;
+
+            var imageContainer = document.getElementById("imageContainer");
+            imageContainer.innerHTML = ""; // Clear previous image
+            var image = document.createElement("img");
+            image.src = imagePath;
+            imageContainer.appendChild(image);
+        }
+
+        function highlightElement(element) {
+            // Remove highlight from previously clicked elements
+			var highlightedElements = document.querySelectorAll('.highlight');
+			highlightedElements.forEach(function(el) {
+				el.classList.remove('highlight');
+			});
+
+			// Highlight the clicked element
+			element.classList.add('highlight');
+			}
+
+    </script>
+	
+	<style> 
+
+		h1 {
+			color: green;
+			margin-top: 70px
+        }
+
+        /******** Task 1 CSS ********/
+        /* It doesn't look pretty on the front end, but I had fun playing with the below,
+           particularly hover and nth-child.   */
+
+        #headerTable {
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 10px solid;
+        }
+
+        #headerTable tr:nth-child(odd){
+            background-color: steelblue;
+        }
+
+        #headerTable tr:hover {
+            background-color: slategrey;
+        }
+
+        #headerTable h3 {
+            font-style: italic;
+            color: brown;
+        }	
+
+		#headerTable h2 {
+			color: blue;
+			font-family: cursive;
+		}
+
+
+        /******** Task 2 CSS ********/
+
+        #t2Table {
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid; 
+        }
+
+        thead.headStyle {
+            background-color: darkblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        #t2Table tbody {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        #t2Table tr:nth-child(even){
+            background-color: lightcyan;
+        }
+
+        tbody > tr:nth-child(odd){
+            background-color: lightgoldenrodyellow;
+        }
+
+        tbody.styling td,tr{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: left;
+        }
+
+        tr td:nth-child(2){
+            text-align: center;
+        }
+
+        td > ul{
+            color: olivedrab;
+        }
+
+
+                /******** Task 3 CSS ********/
+        
+        .container {
+        /* max width for container */
+        max-width: 80%; 
+
+        /* Center container */
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        .container img {
+        /* max width for the image */
+        max-width: 90%;
+        /* ensure the image does not exceed its natural size */
+        height: auto;
+
+        /* Centre the image within the container */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        .container thead {
+        background-color: #4CAF50; 
+        color: white; 
+        font-size: 18px; 
+        font-weight: bold; 
+        text-align: left; 
+        text-transform: uppercase; 
+
+        }
+        
+        /* add padding around text */
+        .container th {
+            padding: 15px; 
+        }
+
+        /*******Task 5 CSS**********/
+
+        /* Highlight colour for the button */
+        .highlight {
+            background-color: aqua;
+        }
+
+        /* COntrol the image size */
+        #imageContainer {
+            max-width: 80%;
+            margin: 20px auto;
+        }
+
+        #imageContainer img {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+	</style>
+	
+</head>
+
+<body>
+    <h1> Assessment task 2 - Exercise 2 </h1>
+	
+
+	
+    
+    
+    <h1> Task 1 </h1>
+    <!--        html code for task 1 is below       -->
+
+    <table id="headerTable">
+        <tr>
+            <th><h2>8809380 - Andrew Dilley</h2></th>
+        </tr>
+        <tr>
+            <th><h3>COMP804: Web Security</h3></th>
+        </tr>
+        <tr>
+            <th><h4>Assignment 1, due at the end of Week 5</h4></th>
+        </tr>
+    </table>
+
+	<h1> Task 2 </h1>
+
+	<!--        html code for task 2 is below        -->
+
+    <table id="t2Table">
+
+        <thead class="headStyle">
+            <tr style="height: 50px;">
+                <th width="68%">Activity</th>
+                <th width="32%">Date</th>
+            </tr>
+        </thead>
+
+        <tbody class="styling">
+
+            <tr>
+                <td>First day to enrol for re-enrolling (continuing students)</td>
+                <td>20 Nov 2023</td>
+            </tr>
+
+            <tr>
+                <td>First day to enrol for new students (commencing students)</td>
+                <td>04 Dec 2023</td>
+            </tr>
+
+            <tr>
+                <td>Orientation</td>
+                <td>
+                    <p>19 Feb - 22 Feb 2024</p>
+                    <p>Further information is available on <a href="https://www.uow.edu.au/student/get-started/orientation/">Get Started</a></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Lectures Commence (weeks 1-7)</td>
+                <td>26 Feb - 12 Apr 2024</td>
+            </tr>
+
+            <tr>
+                <td>Last day to enrol / add subjects yourself</td>
+                <td>08 Mar 2024</td>
+            </tr>
+
+            <tr>
+                <td>Last day to enrol / add subjects with Head of Students approval</td>
+                <td>15 Mar 2024</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p><strong>CENSUS DATE</strong></p>
+                    <ul>
+                        <li>Fees due</li>
+                        <li>Last day to withdraw from subject/s without paying for them</li>
+                        <li>HECS / FEE HELP debt reporting date</li>
+                        <li>Last day to change HECS / FEE HELP billing option</li>
+                    </ul>
+                    <p><a href="https://uowedu.service-now.com/kb?id=kb_article_view&amp;sysparm_article=KB0012659">Learn more about Census date &gt;</a></p>
+                </td>
+                <td>
+                    <div>31 Mar 2024</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div>Student Services and Amenities Fees Due</div>
+                </td>
+                <td>01 Apr 2024</td>
+            </tr>
+            
+            <tr>
+                <td>Last day to withdraw without academic penalty - subject deleted from record
+                    <p>Fail grade recorded if subject withdrawn after this date</p>
+                </td>
+                <td>03 May 2024</td>
+            </tr>
+
+            <tr>
+                <td>Mid-Session Recess (1 week)</td>
+                <td>15 Apr - 19 Apr 2024</td>
+            </tr>
+
+            <tr>
+                <td>Lectures Recommence (weeks 8-13)</td>
+            <td>22 Apr - 31 May 2024</td>
+            </tr>
+
+            <tr>
+                <td>Study Recess (1 week)</td>
+                <td>03 Jun - 07 Jun 2024</td>
+            </tr>
+
+            <tr>
+                <td>Exams (2 weeks)</td>
+                <td>08 Jun - 20 Jun 2024</td>
+            </tr>
+
+            <tr>
+                <td>Mid-Year Recess / End of session break (4 weeks)</td>
+                <td>24 Jun - 19 Jul 2024</td>
+            </tr>
+
+            <tr>
+                <td>Release of Results</td>
+                <td>04 Jul 2024</td>
+            </tr>
+
+            <tr>
+                <td><span>Supplementary&nbsp;and deferred exam period</span></td>
+                <td>15 Jul - 19 Jul 2024</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+		
+	<h1> Task 3 </h1>
+	<!-- html code for task 3 is below -->
+	
+    <table class="container">
+
+        <thead>
+            <tr>
+                <th width="32%">Name</th>
+                <th width="68%">Web Attacks</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <th>
+                    <h4>DoS and DDoS attacks</h4>
+                    <img src="DDoS.png" alt="Image depicting a DDoS attack"> 
+                    <p>Source: <a href="https://www.cloudflare.com/en-gb/learning/ddos/what-is-a-ddos-attack/">Cloudflare</a></p>
+                </th>
+                <th>
+                    <p>
+                        A denial-of-service (DoS) attack is designed to overwhelm the resources of a target system to the point 
+                        where it is unable to reply to legitimate service requests, normally resulting in the system having to 
+                        be taken offline. While the goal is usually to deny service (or take a system offline), this type of 
+                        attack can also create other vulnerabilities for the attacker to exploit while the system is down, or 
+                        being brought back online.
+                    </p>
+                    <p>
+                        DDoS stands for distributed denial-of-service, meaning the use of many machines to attack the target. (Usually malware infected host machines or botnets.)
+                    </p>
+                    <p>Further reading: <a href="https://www.fortinet.com/resources/cyberglossary/types-of-cyber-attacks">https://www.fortinet.com/resources/cyberglossary/types-of-cyber-attacks</a></p>
+                </th>
+            </tr>
+            
+            <tr>
+                <th>
+                    <h3>Ransomware</h3>
+                    <img src="ransomware.png" alt="Ransomware"> 
+                    <p>Source: <a href="https://www.eset.com/int/ransomware-business/">Eset</a></p>
+                </th>
+                <th>
+                    <p>
+                        Ransomware is an attack whereby a target system is infected with malware designed to lock the target system down, so the target is unable to use it. These systems that are targeted are generally business critical and extremely important systems, such as database servers, file servers, and core application servers. It gets its name from the attacker ransoming the system back to the target in exchange for something – usually money.
+                    </p>
+                    <p>
+                        A notable example would be the shipping company Toll, which was attacked twice in 2020. This not only affected Toll, but it also affected the companies which used Toll to ship for them. A company I used to work for had to write off a significant amount of stock that was lost in transit and unable to be recovered due to this attack.
+                    </p>
+                    <p>Further reading: <a href="https://www.fortinet.com/resources/cyberglossary/types-of-cyber-attacks">https://www.fortinet.com/resources/cyberglossary/types-of-cyber-attacks</a></p>
+                    <p><a href="https://www.afr.com/technology/hacked-again-toll-group-systems-hit-by-fresh-ransomware-attack-20200505-p54q19">https://www.afr.com/technology/hacked-again-toll-group-systems-hit-by-fresh-ransomware-attack-20200505-p54q19</a></p>
+                </th>
+            </tr>
+            
+            <tr>
+                <th>
+                    <h3>DNS Spoofing</h3>
+                    <img src="DNS-Spoofing.png" alt="DNS-Spoofing"> 
+                    <p>Source: <a href="https://www.cloudns.net/blog/dns-spoofing-dns-poisoning/">cloudns.net</a></p>
+                </th>
+                <th>
+                    <p>
+                        With DNS (Domain Name System) spoofing, a hacker alters DNS records to send traffic to a fake or “spoofed” website. Once on the fraudulent website, a user may enter sensitive information that can be used or sold by the hacker. In a DNS spoofing attack, the attacker takes advantage of the fact that the user thinks the site they are visiting is legitimate. This gives the attacker the ability to commit crimes in the name of an innocent company, at least from the perspective of the visitor. 
+                    </p>
+                    <p>Further reading: <a href="https://www.fortinet.com/resources/cyberglossary/types-of-cyber-attacks">https://www.fortinet.com/resources/cyberglossary/types-of-cyber-attacks</a></p>
+
+                </th>
+            </tr>
+            
+            <tr>
+                <th>
+                    <h3>Man in the Middle attack</h3>
+                    <img src="man-in-the-middle-attack.png" alt="Man in the middle attack"> 
+                    <p>Source: <a href="https://www.thesslstore.com/blog/man-in-the-middle-attack-2/">The SSL Store</a></p>
+                </th>
+                <th>
+                    <p>
+                        MiTM attacks are common among sites that haven’t encrypted their data as it travels from the user to the servers (sites using HTTP rather than HTTPS.)_ The attacker then intercepts the data being transferred. If the data isn’t encrypted, the attacker can easily read everything being transferred – things like personal information, passwords, payment details, etc.
+                    </p>
+                    <p>Further reading: <a href="https://www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself">https://www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself</a></p>
+                </th>
+            </tr>
+            
+            <tr>
+                <th>
+                    <h3>Phishing</h3>
+                    <img src="phishing.jpg" alt="Phishing Attack"> 
+                    <p>Source: <a href="https://www.hungerford.tech/blog/take-phishing-training-seriously/">Hungerford</a></p>
+                </th>
+                <th>
+                    <p>
+                        Phishing is the practice of sending fraudulent communications that appear to come from a reputable source, usually through email. The goal is usually to steal sensitive data, like logins, personal information, or payment details. 
+                    </p>
+                    <p>
+                        At a previous employer, our payroll officer was tricked into updating payment details for three staff members to fraudulent accounts. The attacker had set up fake email accounts that appeared similar to the personal accounts of the employees, and then sent emails to the payroll officer who then updated the details. They had apparently found this information through publicly available resources – namely LinkedIN.
+                    </p>
+                    <p>Further reading: <a href="https://www.cisco.com/c/en_au/products/security/common-cyberattacks.html#~how-cyber-attacks-work">https://www.cisco.com/c/en_au/products/security/common-cyberattacks.html#~how-cyber-attacks-work</a></p>
+
+                </th>
+            </tr>
+            
+            <tr>
+                <th>
+                    <h3>Cross Site Scripting (XSS)</h3>
+                    <img src="xss_working-cross_site_scripting.png" alt="XSS - cross site Scripting"> 
+                    <p>Source: <a href="https://www.simplilearn.com/tutorials/cyber-security-tutorial/what-is-cross-site-scripting-attack-and-how-to-prevent-it">Simplilearn</a></p>
+                </th>
+                <th>
+                    <p>
+                        Cross Site Scripting (XSS) is a code injection attack in which an adversary inserts malicious code within a legitimate website. The code then launches as an infected script in the user’s web browser, enabling the attacker to steal sensitive information or impersonate the user. Web forums, message boards, blogs and other websites that allow users to post their own content are the most susceptible to XSS attacks.
+                    </p>
+                    <p>Further reading: <a href="https://www.crowdstrike.com/cybersecurity-101/cyberattacks/most-common-types-of-cyberattacks/#5.%20Identity-Based%20Attacks">https://www.crowdstrike.com/cybersecurity-101/cyberattacks/most-common-types-of-cyberattacks/#5.%20Identity-Based%20Attacks</a></p>
+
+                </th>
+            </tr>
+            
+            <tr>
+                <th>
+                    <h3>Supply Chain attacks</h3>
+                    <img src="security-supply_chain_attack-h.png" alt="Supply chain attack"> 
+                    <p>Source: <a href="https://www.techtarget.com/searchsecurity/definition/supply-chain-attack">techtarget.com</a></p>
+                </th>
+                <th>
+                    <p>
+                        A type of attack whereby a trusted third party vendor who offers software or services is attacked. Software supply chain attacks inject malicious code into an application in order to infect all users of an app, while hardware supply chain attacks compromise physical components for the same purpose. Software supply chains are particularly vulnerable because modern software is not written from scratch: rather, it involves many off-the-shelf components, such as third-party APIs, open source code and proprietary code from software vendors.
+                    </p>
+                    <p>Further reading: <a href="https://www.crowdstrike.com/cybersecurity-101/cyberattacks/most-common-types-of-cyberattacks/#7.%20Supply%20Chain%20Attacks">https://www.crowdstrike.com/cybersecurity-101/cyberattacks/most-common-types-of-cyberattacks/#7.%20Supply%20Chain%20Attacks</a></p>
+
+                </th>
+            </tr>
+            
+            <tr>
+                <th>
+                    <h3>Compromised Credentials</h3>
+                    <img src="comp cred.png" alt="Compromised Credentials"> 
+                    <p>Source: <a href="https://www.pentestpartners.com/security-blog/password-policy-guidance/">pentestpartners.com</a></p>
+                </th>
+                <th>
+                    <p>
+                        This type of attack is where a set of users credentials – usually username and password – have been exposed to unauthorised entities, usually without the owner of said credentials knowing. These credentials are then used to gain access to accounts, potentially across a series of websites and applications, by the attacker. These kinds of attacks can be avoided through use of two-factor authentication, regularly updating passwords, not reusing passwords and credentials across different domains and systems.
+                    </p>
+                    <p>Further reading: <a href="https://www.balbix.com/insights/attack-vectors-and-breach-methods/">https://www.balbix.com/insights/attack-vectors-and-breach-methods/</a></p>
+                </th>
+            </tr>
+            
+            <tr>
+                <th>
+                    <h3>Malicious Insider</h3>
+                    <img src="insider.jpg" alt="Malicious Insider"> 
+                    <p>Source: <a href="https://www.softactivity.com/ideas/the-financial-cost-of-an-insider-threat/">softactivity.com</a></p>
+                </th>
+                <th>
+                    <p>
+                        A malicious insider is an employee who exposes private company information and/or exploits company vulnerabilities. Malicious insiders are often unhappy employees. Users with access to sensitive data and networks can inflict extensive damage through privileged misuse and malicious intent.
+                    </p>
+                    <p>Further reading: <a href="https://www.balbix.com/insights/attack-vectors-and-breach-methods/">https://www.balbix.com/insights/attack-vectors-and-breach-methods/</a></p>
+                </th>
+            </tr>
+            
+            <tr>
+                <th>
+                    <h3>Drive-by attack</h3>
+                    <img src="Anatomy-of-a-Drive-by-Download-Attack.png" alt="Drive-by"> 
+                    <p>Source: <a href="https://heimdalsecurity.com/blog/how-drive-by-download-attacks-work/">HeimdallSecurity</a></p>
+                </th>
+                <th>
+                    <p>
+                        In a “drive-by-download” attack, an unsuspecting victim stumbles upon a website that surreptitiously infects their device with malicious software. This website can be under the direct control of the attacker or may have been compromised. In some instances, the malware is cunningly embedded within content like banners and advertisements. The prevalence of exploit kits has lowered the barrier to entry for aspiring hackers, enabling them to effortlessly create malicious websites or disseminate harmful content through various channels.
+                    </p>
+                    <p>Further reading: <a href="https://www.lepide.com/blog/the-15-most-common-types-of-cyber-attacks/">https://www.lepide.com/blog/the-15-most-common-types-of-cyber-attacks/</a></p>
+                </th>
+            </tr>
+            
+         
+            
+            
+    
+        </tbody>
+
+
+
+    </table>
+	
+
+	<h1> Task 4 </h1>
+	<!-- html code for task 4 is below -->
+
+
+    <button id="catButton" onclick="cat(); highlightElement(this)">
+		Cat
+	</button>
+
+	<button id="dogButton" onclick="dog(); highlightElement(this)">
+		Dog
+	</button>
+
+	<button id="frogButton" onclick="frog(); highlightElement(this)">
+		Frog
+	</button>
+
+	<br><br>
+
+	<input id="displayText" value=""> <!-- Input field to display which button is pressed -->
+
+
+
+	<div id="message"></div> <!-- This shows the message-->
+
+    <div id="imageContainer"></div> <!-- This shows the image-->
+
+    <!--
+Frog image taken from: https://www.deviantart.com/pazuah/art/Royal-Frog-v1-924576500
+Dog image taken from: https://stock.adobe.com/au/search?k=dog+cigar&asset_id=559128812
+Cat image taken from: https://i.imgur.com/ilWSd8T.jpg
+
+    -->
+	
+
+    <h1> Task 5 </h1>
+
+
+
+</body>
+
+</html>
